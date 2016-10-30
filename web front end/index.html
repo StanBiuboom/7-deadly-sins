@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Seven Deadly Sins</title>
+    <link href="css/application.min.css" rel="stylesheet">
+    <!-- as of IE9 cannot parse css files with more that 4K classes separating in two files -->
+    <!--[if IE 9]>
+        <link href="css/application-ie9-part2.css" rel="stylesheet">
+    <![endif]-->
+    <link rel="shortcut icon" href="img/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <!--added3-->
+    <link href="bootstrap3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css3/font-awesome.min.css" rel="stylesheet">
+    <link href="css3/linearicons.css" rel="stylesheet">
+    <!--=== plugins ===-->
+    <link href="css3/owl.carousel.css" rel="stylesheet">
+    <link href="css3/owl.theme.css" rel="stylesheet">
+    <!--=== end plugins ===-->
+    <link href="css3/style.css" rel="stylesheet">
+    <link href="css3/responsive.css" rel="stylesheet">
+
+    <!--added4-->
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- bootstarp-css -->
+    <link href="css4/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!--// bootstarp-css -->
+    <!-- css -->
+    <link rel="stylesheet" href="css4/style.css" type="text/css" media="all" />
+    <!--// css -->
+    <script src="js4/jquery-1.11.1.min.js"></script>
+    <!--fonts-->
+    <link href='http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,800,700,600' rel='stylesheet' type='text/css'>
+    <!--/fonts-->
+    <link href="css4/animate.css" rel="stylesheet" type="text/css" media="all">
+    <script src="js4/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+
+    
+</head>
+<body>
+<!--
+  Main sidebar seen on the left. may be static or collapsing depending on selected state.
+
+    * Collapsing - navigation automatically collapse when mouse leaves it and expand when enters.
+    * Static - stays always open.
+-->
+<nav id="sidebar" class="sidebar" role="navigation">
+    <!-- need this .js class to initiate slimscroll -->
+    <div class="js-sidebar-content">
+        <header class="logo hidden-xs">
+            <a href="index.html">main</a>
+        </header>
+        <ul class="sidebar-nav">
+            <li>
+                <a class="collapsed" href="#sidebar-maps" data-toggle="collapse" data-parent="#sidebar">
+                    <span class="icon">
+                        <i class="glyphicon glyphicon-map-marker"></i>
+                    </span>
+                    Google Maps
+                    <i class="toggle fa fa-angle-down"></i>
+                </a>
+                <ul id="sidebar-maps" class="collapse">
+                    <!-- data-no-pjax turns off pjax loading for this link. Use in case of complicated js loading on the
+                         target page -->
+                    <li><a href="maps/melbourne/melbourne_googlemap.html">Melbourne</a></li>
+                    <li><a href="maps/sydney/syndey_googlemap.html">Sydney</a></li>
+                </ul>
+            </li>
+
+             <li>
+                <!-- an example of nested submenu. basic bootstrap collapse component -->
+                <a class="collapsed" href="#sidebar-forms" data-toggle="collapse" data-parent="#sidebar">
+                    <span class="icon">
+                        <i class="glyphicon glyphicon-stats"></i>
+                    </span>
+                    Melbourne'Chart
+                    <i class="toggle fa fa-angle-down"></i>
+                </a>
+                <ul id="sidebar-forms" class="collapse">
+                    <li><a href="charts/melbourne/melbourne_charts.html">Distribution</a></li>
+                    <li><a href="charts/melbourne/Inner.html">Inner</a></li>
+                    <li><a href="charts/melbourne/Inner_East.html">Inner East</a></li>
+                    <li><a href="charts/melbourne/Inner_South.html">Inner South</a></li>
+                    <li><a href="charts/melbourne/North_East.html">North East</a></li>
+                    <li><a href="charts/melbourne/North_West.html">North West</a></li>
+                    <li><a href="charts/melbourne/Outer_East.html">Outer East</a></li>
+                    <li><a href="charts/melbourne/South_East.html">South East</a></li>
+                    <li><a href="charts/melbourne/West.html">West</a></li>
+                    <li><a href="charts/melbourne/Mornington_Peninsula.html">Mornington Peninsula</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="collapsed" href="#sidebar-ui" data-toggle="collapse" data-parent="#sidebar">
+                    <span class="icon">
+                        <i class="fa fa-folder-open"></i>
+                    </span>
+                    Sydney's Chart
+                    <i class="toggle fa fa-angle-down"></i>
+                </a>
+                <ul id="sidebar-ui" class="collapse">
+                    <li><a href="charts/sydney/sydney_charts.html">Distribution</a></li>
+                    <li><a href="charts/sydney/Central_Coast.html">Central Coast</a></li>
+                    <li><a href="charts/sydney/Baulkham.html">Baulkham Hills and Hawkesbury </a></li>
+                    <li><a href="charts/sydney/Blacktown.html">Blacktown</a></li>
+                    <li><a href="charts/sydney/City_Inner_South.html">City and Inner South</a></li>
+                    <li><a href="charts/sydney/Eastern_Suburbs.html">Eastern Suburbs</a></li>
+                    <li><a href="charts/sydney/Inner_South_West.html">Inner South West</a></li>
+                    <li><a href="charts/sydney/Inner_West.html">Inner West</a></li>
+                    <li><a href="charts/sydney/Northern_Beaches.html">Northern Beaches</a></li>
+                    <li><a href="charts/sydney/North_Sydney_and_Hornsby.html">North Sydney and Hornsby</a></li>
+                    <li><a href="charts/sydney/Outer_South_West.html">Outer South West </a></li>
+                    <li><a href="charts/sydney/Outer_West_and_Blue_Mountains.html">Outer West and Blue Mountains </a></li>
+                    <li><a href="charts/sydney/Parrametta.html">Parrametta</a></li>
+                  
+                </ul>
+            </li>
+         </ul>
+    </div>
+</nav>
+
+
+<!--added2-->
+<!--======== header =========-->
+<div class="content-wrap">
+    <header id="home">
+        <div class="small-menu small-menu-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 col-sm-8 col-xs-5">
+                        <ul class="list-inline info-link">
+                            <li title="Language"><i class="fa fa-globe"></i><span class="hidden-xs">Language : English</span></li>
+                            <li title="Hot Line"><i class="fa fa-phone"></i><span class="hidden-xs">(+61) 452590230</span></li>
+                            <li title="Show Time"><i class="fa fa-clock-o"></i><span class="hidden-xs">Sat - Wet : 9.00 - 18.00</span></li>
+                        </ul>
+                    </div> 
+                    <div class="col-md-5 col-sm-4 col-xs-7">
+                        <ul class="list-inline pull-right social-link">
+                            <li title="Email"><i class="fa fa-paper-plane"></i><span class="hidden-sm hidden-xs">jingjings1@student.unimelb.edu.au </span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <!-- menu 4 -->
+                <div class="navbar navbar-default default-menu menu-4" role="navigation">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-4" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand default-logo" href="#">Ranger</a>
+                        </div>
+
+                        <div class="collapse navbar-collapse" id="menu-4">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="active"><a class="scroll" href="#home">Home</a></li>
+                                <li><a class="scroll" href="#about-us">Introduction</a></li>
+                                <li><a class="scroll" href="#service">Gallery</a></li>
+                                <li><a class="scroll" href="#team">Map Area</a></li>
+                                <li><a class="scroll" href="#contact">About Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div><!-- end menu -->
+            </div>
+        </div>            
+    </header>
+    <!--======== end header =========-->
+    <main id="content" class="content" role="main">
+        <!--======== intro =========-->
+        <section class="intro">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <div class="intro-content text-center">
+                                    <h1>Seven Deadly Sins</h1>
+                                    <p>Exploring the Seven Deadly Sins through Social Media Analytics for Cities in Australia. A cloud based system to identify and explore a range of human emotions with focus on Dante’s seven deadly sins.</p>
+                                    <a class="btn btn-default" href="startpage/index.html" role="button">More with Aurin <i class="lnr lnr-chevron-right"></i></a>                               
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="intro-content text-center">
+                                    <h1>Melbourne</h1>
+                                    <p>Exploring the Seven Deadly Sins through Social Media Analytics for Cities in Australia. A cloud based system to identify and explore a range of human emotions with focus on Dante’s seven deadly sins.</p>
+                                    <a class="btn btn-default" href="startpage/index.html" role="button">More with Aurin <i class="lnr lnr-chevron-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="intro-content text-center">
+                                    <h1>Sydney</h1>
+                                    <p>Exploring the Seven Deadly Sins through Social Media Analytics for Cities in Australia. A cloud based system to identify and explore a range of human emotions with focus on Dante’s seven deadly sins.</p>
+                                    <a class="btn btn-default" href="startpage/index.html" role="button">More with Aurin <i class="lnr lnr-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--======== end intro =========-->
+        <!-- banner-bottom -->
+            <div class="banner-bottom">
+                <!-- container -->
+                <div class="container">
+                    <div class="banner-bottom-grids">
+                        <div class="col-md-6 banner-bottom-grid-text">
+                            <div class="jumbotron banner-bottom-left wow fadeInLeft animated" data-wow-delay="0.5s" style="visibility: visible; -webkit-animation-delay: 0.5s;  ">
+                              <h3>Envy</h3>
+                                <h5>Painful or resentful awareness of an advantage enjoyed by another joined with a desire to possess the same advantage: “Therefore, rid yourselves of all malice and all deceit, hypocrisy, envy, and slander of every kind.</h5>
+                                <p>Grieving spite and resentment of material objects, accomplishments, or character traits of others, or wishing others to fail or come to harm. Envy is the root of theft and self-loathing.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 banner-bottom-right wow fadeInRight animated" data-wow-delay="0.5s" style="visibility: visible; -webkit-animation-delay: 0.5s;">
+                            <img src="galleries/envy.jpg" alt=""/>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <!--first-->
+                    <div class="banner-bottom-grids">
+                       
+                        <div class="col-md-4 banner-bottom-right wow fadeInRight animated" data-wow-delay="0.5s" style="visibility: visible; -webkit-animation-delay: 0.5s;">
+                            <img src="galleries/gluttony.jpg" alt=""/>
+                        </div>
+                         <div class="col-md-6 banner-bottom-grid-text">
+                            <div class="jumbotron banner-bottom-left wow fadeInLeft animated" data-wow-delay="0.5s" style="visibility: visible; -webkit-animation-delay: 0.5s;  ">
+                              <h3>Gluttony</h3>
+                                <h5>Excess in eating and drinking: “for drunkards and gluttons become poor, and drowsiness clothes them in rags</h5>
+                                <p>Thoughtless waste of everything, overindulgence, misplaced sensuality, uncleanliness, and maliciously depriving others. Marked by refusal to share and unreasonable consumption of more than is necessary, especially food or water. </p>
+                            </div>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <!--second-->
+                    <div class="banner-bottom-grids">
+                        <div class="col-md-6 banner-bottom-grid-text">
+                            <div class="jumbotron banner-bottom-left wow fadeInLeft animated" data-wow-delay="0.5s" style="visibility: visible; -webkit-animation-delay: 0.5s;  ">
+                              <h3>Greed</h3>
+                                <h5>Excessive or reprehensible acquisitiveness: “Having lost all sensitivity, they have given themselves over to sensuality so as to indulge in every kind of impurity, with a continual lust for more</h5>
+                                <p>A strong desire to gain, especially in money or power. Disloyalty, deliberate betrayal, or treason, especially for personal gain or when compensated. Scavenging and hoarding of materials or objects.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 banner-bottom-right wow fadeInRight animated" data-wow-delay="0.5s" style="visibility: visible; -webkit-animation-delay: 0.5s;">
+                            <img src="galleries/greed.jpg" alt=""/>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <!--forth-->
+                    <div class="banner-bottom-grids">
+                        <div class="col-md-4 banner-bottom-right wow fadeInRight animated" data-wow-delay="0.5s" style="visibility: visible; -webkit-animation-delay: 0.5s;">
+                            <img src="galleries/lust.jpg" alt=""/>
+                        </div>               
+                        <div class="col-md-6 banner-bottom-grid-text">
+                            <div class="jumbotron banner-bottom-left wow fadeInLeft animated" data-wow-delay="0.5s" style="visibility: visible; -webkit-animation-delay: 0.5s;  ">
+                              <h3>Lust</h3>
+                                <h5>To have an intense desire or need: “But I tell you that anyone who looks at a woman lustfully has already committed adultery with her in his heart.</h5>
+                                <p>Obsessive, unlawful depraved thought, or unnatural desire for sexual excitement, such as desiring sex with a person outside marriage or engaging in unnatural sexual appetites. Rape and sodomy are considered to be extreme lust and are said to be mortal sins.</p>
+                            </div>
+                        </div>
+
+                        <div class="clearfix"> </div>
+                    </div>
+                    <!--five-->
+                    <div class="banner-bottom-grids">
+                        <div class="col-md-6 banner-bottom-grid-text">
+                            <div class="jumbotron banner-bottom-left wow fadeInLeft animated" data-wow-delay="0.5s" style="visibility: visible; -webkit-animation-delay: 0.5s;  ">
+                              <h3>Pride</h3>
+                                <h5>Quality or state of being proud – inordinate self esteem: “Pride goes before destruction, a haughty spirit before a fall.</h5>
+                                <p>Pride (vanity, narcissism) —A desire to be more important or attractive to others, failing to give credit due to others, or excessive love of self (especially holding self out of proper position toward God).</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 banner-bottom-right wow fadeInRight animated" data-wow-delay="0.5s" style="visibility: visible; -webkit-animation-delay: 0.5s;">
+                            <img src="galleries/pride.jpg" alt=""/>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <!--6-->
+                    <div class="banner-bottom-grids">
+                        <div class="col-md-4 banner-bottom-right wow fadeInRight animated" data-wow-delay="0.5s" style="visibility: visible; -webkit-animation-delay: 0.5s;">
+                            <img src="galleries/sloth.jpg" alt=""/>
+                        </div>
+                        <div class="col-md-6 banner-bottom-grid-text">
+                            <div class="jumbotron banner-bottom-left wow fadeInLeft animated" data-wow-delay="0.5s" style="visibility: visible; -webkit-animation-delay: 0.5s;  ">
+                              <h3>Sloth</h3>
+                                <h5>Disinclined to activity or exertion: not energetic or vigorous: “The way of the sluggard is blocked with thorns, but the path of the upright is a highway</h5>
+                                <p>Sloth (apathy, indifference) —Apathy, idleness, and wastefulness of time. Laziness is particularly condemned because others must work harder to make up for it. Cowardice or irresponsibility. Abandonment, especially of God.</p>
+                            </div>
+                        </div> 
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="banner-bottom-grids">
+                        <div class="col-md-6 banner-bottom-grid-text">
+                            <div class="jumbotron banner-bottom-left wow fadeInLeft animated" data-wow-delay="0.5s" style="visibility: visible; -webkit-animation-delay: 0.5s;  ">
+                              <h3>Wrath</h3>
+                                <h5>Strong vengeful anger or indignation: “A gentle answer turns away wrath, but a harsh word stirs up anger</h5>
+                                <p>Feelings of hatred and anger. Denial of the truth to others or self. Impatience or revenge outside of justice. Wishing to do evil or harm to others. Self-righteousness. Wrath is the root of murder and assault. Dante described wrath as "love of justice perverted to revenge and spite".</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 banner-bottom-right wow fadeInRight animated" data-wow-delay="0.5s" style="visibility: visible; -webkit-animation-delay: 0.5s;">
+                            <img src="galleries/wrath.jpg" alt=""/>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+                <!-- //container -->
+            </div>
+            <!-- //banner-bottom -->
+            
+            <!--======== our service =========-->
+            <section id="service" class="our-service">
+                <div class="ccontainer">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3 text-center">                
+                            <h2 class="section-title">Gallery</h2>
+                         
+                        </div>
+                    </div>   
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="four-slide">
+                                <div class="single-slide"><img src="galleries/envy.jpg" alt="">
+                                    <div class="service-overflow text-center">
+                                        <h3>Envy</h3>
+                                        <p>Wanting to have what someone has.</p>
+                                    </div>
+                                </div>
+                                <div class="single-slide"><img src="galleries/gluttony.jpg" alt="">
+                                    <div class="service-overflow text-center">
+                                        <h3>Gluttony</h3>
+                                        <p>The action of taking too much of something in.</p>
+                                    </div>
+                                </div>
+                                <div class="single-slide"><img src="galleries/greed.jpg" alt="">
+                                    <div class="service-overflow text-center">
+                                        <h3>Greed</h3>
+                                        <p>Wanting too much of something.</p>
+                                    </div>
+                                </div>
+                                <div class="single-slide"><img src="galleries/lust.jpg" alt="">
+                                    <div class="service-overflow text-center">
+                                        <h3>Lust</h3>
+                                        <p>The need to fulfill unspiritual desires.</p>
+                                    </div>
+                                </div>
+                                <div class="single-slide"><img src="galleries/pride.jpg" alt="">
+                                    <div class="service-overflow text-center">
+                                        <h3>Pride</h3>
+                                        <p>Being too self-satisfied.</p>
+                                    </div>
+                                </div>
+                                <div class="single-slide"><img src="galleries/sloth.jpg" alt="">
+                                    <div class="service-overflow text-center">
+                                        <h3>Sloth</h3>
+                                        <p>Being too slow or lazy at doing something.</p>
+                                    </div>
+                                </div>
+                                <div class="single-slide"><img src="galleries/wrath.jpg" alt="">
+                                    <div class="service-overflow text-center">
+                                        <h3>Wrath</h3>
+                                        <p>Vindictive anger Angry revenge.</p>
+                                    </div>
+                                </div>
+                                <div class="single-slide"><img src="galleries/envy2.jpg" alt="">
+                                    <div class="service-overflow text-center">
+                                        <h3>Envy</h3>
+                                        <p>Wanting to have what someone has.</p>
+                                    </div>
+                                </div>
+                                <div class="single-slide"><img src="galleries/greed2.jpg" alt="">
+                                    <div class="service-overflow text-center">
+                                        <h3>Greed</h3>
+                                        <p>Wanting too much of something.</p>
+                                    </div>
+                                </div>
+                                <div class="single-slide"><img src="galleries/lust2.jpg" alt="">
+                                    <div class="service-overflow text-center">
+                                        <h3>Lust</h3>
+                                        <p>The need to fulfill unspiritual desires.</p>
+                                    </div>
+                                </div>
+                                <div class="single-slide"><img src="galleries/pride2.jpg" alt="">
+                                    <div class="service-overflow text-center">
+                                        <h3>Pride</h3>
+                                        <p>Being too self-satisfied.</p>
+                                    </div>
+                                </div>
+                                <div class="single-slide"><img src="galleries/sloth2.jpg" alt="">
+                                    <div class="service-overflow text-center">
+                                        <h3>Sloth</h3>
+                                        <p>Being too slow or lazy at doing something.</p>
+                                    </div>
+                                </div>
+                                <div class="single-slide"><img src="galleries/wrath2.jpg" alt="">
+                                    <div class="service-overflow text-center">
+                                        <h3>Wrath</h3>
+                                        <p>Vindictive anger Angry revenge.</p>
+                                    </div>
+                                </div>
+                                <div class="single-slide"><img src="galleries/lust3.jpg" alt="">
+                                    <div class="service-overflow text-center">
+                                        <h3>Lust</h3>
+                                        <p>The need to fulfill unspiritual desires.</p>
+                                    </div>
+                                </div>
+                                <div class="single-slide"><img src="galleries/pride3.jpg" alt="">
+                                    <div class="service-overflow text-center">
+                                        <h3>Pride</h3>
+                                        <p>Being too self-satisfied.</p>
+                                    </div>
+                                </div>
+                                <div class="single-slide"><img src="galleries/wrath3.jpg" alt="">
+                                    <div class="service-overflow text-center">
+                                        <h3>Wrath</h3>
+                                        <p>Vindictive anger Angry revenge.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </section>
+             <!--=======map========-->
+            <section id="service" class="our-service">
+                <div class="ccontainer">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3 text-center">                
+                            <h2 class="section-title">MAP AREA</h2>
+                         
+                        </div>
+                    </div>   
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <iframe src="indexmap.html" width="100%" height="300px" frameborder=0></iframe> 
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--======== our expets =========-->
+            <section id="team" class="our-experts">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-md-6 col-xs-12"> 
+                            <h2 class="section-title">About us</h2>
+                            <p>Jian Song is responsible for data collecting,data processing,data analysis,database management.Jingjing Sun is responsible for the web development.</p>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="three-slide">
+                                <div class="single-slide"><img class="img-circle" src="img/stan.jpg" alt="">
+                                    <div class="text-center">
+                                        <h3 class="expert-name">Jian Song</h3>
+                                        <strong class="expert-tag">719790</strong>
+                                    </div>
+                                </div>
+                                <div class="single-slide"><img class="img-circle" src="img/jingjingsun.jpg" alt="">
+                                    <div class="text-center">
+                                        <h3 class="expert-name">Jingjing Sun</h3>
+                                        <strong class="expert-tag">726718</strong>
+                                    </div>
+                                </div>
+                             
+                            </div>   
+                        </div>    
+                    </div>
+                </div>    
+            </section>
+            <!--======== end our expets =========-->
+    </main>
+    
+
+ 
+    <!--======== footer =========-->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-md-12 text-center">
+                <p>Copyright 2016. All Rights Reserved.</p>
+                    <span><a href="#home" class="scroll"><i class="lnr lnr lnr-exit-up"></i></a></span>
+                </div>
+            </div>
+        </div>    
+    </footer>
+</div>
+
+        
+<!-- The Loader. Is shown when pjax happens -->
+<div class="loader-wrap hiding hide">
+    <i class="fa fa-circle-o-notch fa-spin-fast"></i>
+</div>
+
+
+<!-- common libraries. required for every page-->
+<script src="vendor/jquery/dist/jquery.min.js"></script>
+<script src="vendor/jquery-pjax/jquery.pjax.js"></script>
+<script src="vendor/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
+<script src="vendor/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+<script src="vendor/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+<script src="vendor/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
+<script src="vendor/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
+<script src="vendor/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
+<script src="vendor/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="vendor/widgster/widgster.js"></script>
+<script src="vendor/pace.js/pace.js" data-pace-options='{ "target": ".content-wrap", "ghostTime": 1000 }'></script>
+<script src="vendor/jquery-touchswipe/jquery.touchSwipe.js"></script>
+<script src="vendor/jquery-touchswipe/jquery.touchSwipe.js"></script>
+
+<!-- common app js -->
+<script src="js/settings.js"></script>
+<script src="js/app.js"></script>
+
+<!-- page specific libs -->
+<script id="test" src="vendor/underscore/underscore.js"></script>
+<script src="vendor/jquery.sparkline/index.js"></script>
+<script src="vendor/jquery.sparkline/index.js"></script>
+<script src="vendor/d3/d3.min.js"></script>
+<script src="vendor/rickshaw/rickshaw.min.js"></script>
+<script src="vendor/raphael/raphael-min.js"></script>
+<script src="vendor/jQuery-Mapael/js/jquery.mapael.js"></script>
+<script src="vendor/jQuery-Mapael/js/maps/usa_states.js"></script>
+<script src="vendor/jQuery-Mapael/js/maps/world_countries.js"></script>
+<script src="vendor/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
+<script src="vendor/bootstrap_calendar/bootstrap_calendar/js/bootstrap_calendar.min.js"></script>
+<script src="vendor/jquery-animateNumber/jquery.animateNumber.min.js"></script>
+
+<!-- page specific js -->
+<script src="js/index.js"></script>
+
+<!--added3-->
+<script src="js3/jquery-2.1.1.js"></script>
+<script src="bootstrap3/js/bootstrap.min.js"></script>
+<script src="js3/owl.carousel.min.js"></script>
+<script src="js3/custom.js"></script>
+
+</body>
+</html>

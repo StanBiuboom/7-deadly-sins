@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>amCharts examples</title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <script src="../amcharts/amcharts.js" type="text/javascript"></script>
+        <script src="../amcharts/serial.js" type="text/javascript"></script>
+
+        <script>
+            var chart;
+            var chartData = [
+                {
+                    "sins":  "Pride",
+                    "Tweets Number": 18
+                 
+                },
+                {
+                    "sins": "Wrath",
+                    "Tweets Number": 178
+                
+                },
+                {
+                    "sins": "Sloth",
+                    "Tweets Number": 80
+                   
+                },
+                {
+                    "sins": "Envy",
+                    "Tweets Number": 83
+                   
+                },
+                {
+                    "sins": "Lust",
+                    "Tweets Number": 237
+                
+                },
+                {
+                    "sins": "Gluttony",
+                    "Tweets Number": 32,
+                    "expenses": 27.2,
+                    "dashLengthLine": 5
+                },
+                {
+                    "sins": "Greed",
+                    "Tweets Number": 37,
+                    "expenses": 29.9,
+                    "dashLengthColumn": 5,
+                    "alpha":0.2,
+                    "additional":"(projection)"
+                }
+
+            ];
+
+
+            AmCharts.ready(function () {
+                // SERIAL CHART
+                chart = new AmCharts.AmSerialChart();
+
+                chart.dataProvider = chartData;
+                chart.categoryField = "sins";
+                chart.startDuration = 1;
+
+                chart.handDrawn = true;
+                chart.handDrawnScatter = 3;
+
+                // AXES
+                // category
+                var categoryAxis = chart.categoryAxis;
+                categoryAxis.gridPosition = "start";
+
+                // value
+                var valueAxis = new AmCharts.ValueAxis();
+                valueAxis.axisAlpha = 0;
+                chart.addValueAxis(valueAxis);
+
+                // GRAPHS
+                // column graph
+                var graph1 = new AmCharts.AmGraph();
+                graph1.type = "column";
+                graph1.title = "Tweets Number";
+                graph1.lineColor = "#a668d5";
+                graph1.valueField = "Tweets Number";
+                graph1.lineAlpha = 1;
+                graph1.fillAlphas = 1;
+                graph1.dashLengthField = "dashLengthColumn";
+                graph1.alphaField = "alpha";
+                graph1.balloonText = "<span style='font-size:13px;'>[[title]] in [[category]]:<b>[[value]]</b> [[additional]]</span>";
+                chart.addGraph(graph1);
+
+          
+
+                // LEGEND
+                var legend = new AmCharts.AmLegend();
+                legend.useGraphSettings = true;
+                chart.addLegend(legend);
+
+                // WRITE
+                chart.write("chartdiv");
+            });
+        </script>
+    </head>
+
+    <body>
+        <div id="chartdiv" style="width:80%; height:400px;"></div>
+    </body>
+
+</html>
