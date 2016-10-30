@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>amCharts examples</title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <script src="../amcharts/amcharts.js" type="text/javascript"></script>
+        <script src="../amcharts/serial.js" type="text/javascript"></script>
+        <script>
+            var chart;
+
+            var chartData = [
+                 {
+                    "Area": 'Central Coast',
+                    "Tweets percentage": 13.43,
+                    "female income higher": 14.9
+                },
+                {
+                    "Area": 'Baulkham',
+                    "Tweets percentage": 16.32,
+                    "female income higher": 10.9
+                },
+                {
+                    "Area": 'Blacktown',
+                    "Tweets percentage": 14.67,
+                    "female income higher": 17.2
+                },
+                {
+                    "Area": 'City and Inner South',
+                    "Tweets percentage": 17.66,
+                    "female income higher": 18.4
+                },
+                {
+                    "Area": 'Eastern Suburbs',
+                    "Tweets percentage": 23.29,
+                    "female income higher": 12.2
+                },
+                {
+                    "Area": 'Inner South West',
+                    "Tweets percentage": 12.03,
+                    "female income higher": 16.1
+                },
+                {
+                    "Area": 'Inner West',
+                    "Tweets percentage": 13.36,
+                    "female income higher": 15.2
+                },
+                {
+                    "Area": 'North Sydney and Hornsby',
+                    "Tweets percentage": 18.65,
+                    "female income higher": 10.1
+                },
+                {
+                    "Area": 'Northern Beaches',
+                    "Tweets percentage": 18.74,
+                    "female income higher": 10.9
+                },
+                 {
+                    "Area": 'Outer south west',
+                    "Tweets percentage": 14.05,
+                    "female income higher": 15.1
+                },
+                {
+                    "Area": 'Outer West and Blue Mountains',
+                    "Tweets percentage": 13.86,
+                    "female income higher": 13.6,
+                    "dashLengthLine": 5
+                },
+                {
+                    "Area": 'Parrametta',
+                    "Tweets percentage": 23.26,
+                    "female income higher": 16.4,
+                    "dashLengthColumn": 5,
+                    "alpha":0.2,
+                    "additional":"(projection)"
+                }
+            ];
+
+
+            AmCharts.ready(function () {
+                // SERIAL CHART
+                chart = new AmCharts.AmSerialChart();
+                chart.dataProvider = chartData;
+                chart.categoryField = "Area";
+                chart.startDuration = 1;
+                chart.plotAreaBorderColor = "#DDA0DD";
+                chart.plotAreaBorderAlpha = 1;
+                // this single line makes the chart a bar chart
+                chart.rotate = true;
+
+                // AXES
+                // Category
+                var categoryAxis = chart.categoryAxis;
+                categoryAxis.gridPosition = "start";
+                categoryAxis.gridAlpha = 0.1;
+                categoryAxis.axisAlpha = 0;
+
+                // Value
+                var valueAxis = new AmCharts.ValueAxis();
+                valueAxis.axisAlpha = 0;
+                valueAxis.gridAlpha = 0.1;
+                valueAxis.position = "top";
+                chart.addValueAxis(valueAxis);
+
+                // GRAPHS
+                // first graph
+                var graph1 = new AmCharts.AmGraph();
+                graph1.type = "column";
+                graph1.title = "Tweets percentage";
+                graph1.valueField = "Tweets percentage";
+                graph1.balloonText = "Tweets percentage:[[value]]";
+                graph1.lineAlpha = 0;
+                graph1.fillColors = "#B0E0E6";
+                graph1.fillAlphas = 1;
+                chart.addGraph(graph1);
+
+                // second graph
+                var graph2 = new AmCharts.AmGraph();
+                graph2.type = "column";
+                graph2.title = "female income higher";
+                graph2.valueField = "female income higher";
+                graph2.balloonText = "female income higher:[[value]]";
+                graph2.lineAlpha = 0;
+                graph2.fillColors = "#81acd9";
+                graph2.fillAlphas = 1;
+                chart.addGraph(graph2);
+
+                // LEGEND
+                var legend = new AmCharts.AmLegend();
+                chart.addLegend(legend);
+
+                chart.creditsPosition = "top-right";
+
+                // WRITE
+                chart.write("chartdiv");
+            });
+        </script>
+    </head>
+
+    <body>
+        <div id="chartdiv" style="width:100%; height:400px;"></div>
+    </body>
+
+</html>

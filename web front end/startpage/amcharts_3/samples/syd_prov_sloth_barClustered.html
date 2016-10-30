@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>amCharts examples</title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <script src="../amcharts/amcharts.js" type="text/javascript"></script>
+        <script src="../amcharts/serial.js" type="text/javascript"></script>
+        <script>
+            var chart;
+
+            var chartData = [
+                 {
+                    "Area": 'Central Coast',
+                    "Tweets percentage": 13.43,
+                    "teenager rate": 5.49
+                },
+                {
+                    "Area": 'Baulkham',
+                    "Tweets percentage": 16.32,
+                    "teenager rate": 6.45
+                },
+                {
+                    "Area": 'Blacktown',
+                    "Tweets percentage": 14.67,
+                    "teenager rate": 6.81
+                },
+                {
+                    "Area": 'City and Inner South',
+                    "Tweets percentage": 17.66,
+                    "teenager rate": 10.98
+                },
+                {
+                    "Area": 'Eastern Suburbs',
+                    "Tweets percentage": 23.29,
+                    "teenager rate": 8.74
+                },
+                {
+                    "Area": 'Inner South West',
+                    "Tweets percentage": 12.03,
+                    "teenager rate": 6.94
+                },
+                {
+                    "Area": 'Inner West',
+                    "Tweets percentage": 13.36,
+                    "teenager rate": 7.33
+                },
+                {
+                    "Area": 'North Sydney and Hornsby',
+                    "Tweets percentage": 18.65,
+                    "teenager rate": 5.84
+                },
+                {
+                    "Area": 'Northern Beaches',
+                    "Tweets percentage": 18.74,
+                    "teenager rate": 5.17
+                },
+                 {
+                    "Area": 'Outer south west',
+                    "Tweets percentage": 14.05,
+                    "teenager rate": 6.98
+                },
+                {
+                    "Area": 'Outer West and Blue Mountains',
+                    "Tweets percentage": 13.86,
+                    "teenager rate": 6.88
+                },
+                {
+                    "Area": 'Parrametta',
+                    "Tweets percentage": 23.26,
+                    "teenager rate": 7.54
+                }
+            ];
+
+
+            AmCharts.ready(function () {
+                // SERIAL CHART
+                chart = new AmCharts.AmSerialChart();
+                chart.dataProvider = chartData;
+                chart.categoryField = "Area";
+                chart.startDuration = 1;
+                chart.plotAreaBorderColor = "#DADADA";
+                chart.plotAreaBorderAlpha = 1;
+                // this single line makes the chart a bar chart
+                chart.rotate = true;
+
+                // AXES
+                // Category
+                var categoryAxis = chart.categoryAxis;
+                categoryAxis.gridPosition = "start";
+                categoryAxis.gridAlpha = 0.1;
+                categoryAxis.axisAlpha = 0;
+
+                // Value
+                var valueAxis = new AmCharts.ValueAxis();
+                valueAxis.axisAlpha = 0;
+                valueAxis.gridAlpha = 0.1;
+                valueAxis.position = "top";
+                chart.addValueAxis(valueAxis);
+
+                // GRAPHS
+                // first graph
+                var graph1 = new AmCharts.AmGraph();
+                graph1.type = "column";
+                graph1.title = "Tweets percentage";
+                graph1.valueField = "Tweets percentage";
+                graph1.balloonText = "Tweets percentage:[[value]]";
+                graph1.lineAlpha = 0;
+                graph1.fillColors = "#ADD981";
+                graph1.fillAlphas = 1;
+                chart.addGraph(graph1);
+
+                // second graph
+                var graph2 = new AmCharts.AmGraph();
+                graph2.type = "column";
+                graph2.title = "teenager rate";
+                graph2.valueField = "teenager rate";
+                graph2.balloonText = "teenager rate:[[value]]";
+                graph2.lineAlpha = 0;
+                graph2.fillColors = "#81acd9";
+                graph2.fillAlphas = 1;
+                chart.addGraph(graph2);
+
+                // LEGEND
+                var legend = new AmCharts.AmLegend();
+                chart.addLegend(legend);
+
+                chart.creditsPosition = "top-right";
+
+                // WRITE
+                chart.write("chartdiv");
+            });
+        </script>
+    </head>
+
+    <body>
+        <div id="chartdiv" style="width:100%; height:400px;"></div>
+    </body>
+
+</html>

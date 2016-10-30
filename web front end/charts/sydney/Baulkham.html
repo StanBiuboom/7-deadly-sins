@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sing - Google Maps</title>
+    <link href="../../css/application.min.css" rel="stylesheet">
+    <!-- as of IE9 cannot parse css files with more that 4K classes separating in two files -->
+    <!--[if IE 9]>
+        <link href="css/application-ie9-part2.css" rel="stylesheet">
+    <![endif]-->
+    <link rel="shortcut icon" href="../../img/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+
+    <!-- added content Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="../../testbootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../testdist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="../../testdist/css/skins/_all-skins.min.css">
+    <script>
+        /* yeah we need this empty stylesheet here. It's cool chrome & chromium fix
+         chrome fix https://code.google.com/p/chromium/issues/detail?id=167083
+         https://code.google.com/p/chromium/issues/detail?id=332189
+         */
+    </script>
+
+</head>
+<body>
+<!--
+  Main sidebar seen on the left. may be static or collapsing depending on selected state.
+
+    * Collapsing - navigation automatically collapse when mouse leaves it and expand when enters.
+    * Static - stays always open.
+-->
+<nav id="sidebar" class="sidebar" role="navigation">
+    <!-- need this .js class to initiate slimscroll -->
+    <div class="js-sidebar-content">
+        <header class="logo hidden-xs">
+            <a href="../../index.html">main</a>
+        </header>
+        <ul class="sidebar-nav">
+            <li>
+                <a class="collapsed" href="#sidebar-maps" data-toggle="collapse" data-parent="#sidebar">
+                    <span class="icon">
+                        <i class="glyphicon glyphicon-map-marker"></i>
+                    </span>
+                    Google Maps
+                    <i class="toggle fa fa-angle-down"></i>
+                </a>
+                <ul id="sidebar-maps" class="collapse">
+                    <!-- data-no-pjax turns off pjax loading for this link. Use in case of complicated js loading on the
+                         target page -->
+                    <li><a href="../../maps/melbourne/melbourne_googlemap.html">Melbourne</a></li>
+                    <li><a href="../../sydney/syndey_googlemap.html">Sydney</a></li>
+                </ul>
+            </li>
+
+             <li>
+                <!-- an example of nested submenu. basic bootstrap collapse component -->
+                <a class="collapsed" href="#sidebar-forms" data-toggle="collapse" data-parent="#sidebar">
+                    <span class="icon">
+                        <i class="glyphicon glyphicon-stats"></i>
+                    </span>
+                    Melbourne'Chart
+                    <i class="toggle fa fa-angle-down"></i>
+                </a>
+                <ul id="sidebar-forms" class="collapse">
+                    <li><a href="../melbourne/melbourne_charts.html">Distribution</a></li>
+                    <li><a href="../melbourne/Inner.html">Inner</a></li>
+                    <li><a href="../melbourne/Inner_East.html">Inner East</a></li>
+                    <li><a href="../melbourne/Inner_South.html">Inner South</a></li>
+                    <li><a href="../melbourne/North_East.html">North East</a></li>
+                    <li><a href="../melbourne/North_West.html">North West</a></li>
+                    <li><a href="../melbourne/Outer_East..html">Outer East</a></li>
+                    <li><a href="../melbourne/South_East.html">South East</a></li>
+                    <li><a href="../melbourne/West.html">West</a></li>
+                    <li><a href="../melbourne/Mornington_Peninsula.html">Mornington Peninsula</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="collapsed" href="#sidebar-ui" data-toggle="collapse" data-parent="#sidebar">
+                    <span class="icon">
+                        <i class="fa fa-folder-open"></i>
+                    </span>
+                    Sydney's Chart
+                    <i class="toggle fa fa-angle-down"></i>
+                </a>
+                <ul id="sidebar-ui" class="collapse">
+                    <li><a href="sydney_charts.html">Distribution</a></li>
+                    <li><a href="Central_Coast.html">Central Coast</a></li>
+                    <li><a href="Baulkham.html">Baulkham Hills and Hawkesbury </a></li>
+                    <li><a href="Blacktown.html">Blacktown</a></li>
+                    <li><a href="City_Inner_South.html">City and Inner South</a></li>
+                    <li><a href="Eastern_Suburbs.html">Eastern Suburbs</a></li>
+                    <li><a href="Inner_South_West.html">Inner South West</a></li>
+                    <li><a href="Inner_West.html">Inner West</a></li>
+                    <li><a href="Northern_Beaches.html">Northern Beaches</a></li>
+                    <li><a href="North_Sydney_and_Hornsby.html">North Sydney and Hornsby</a></li>
+                    <li><a href="Outer_South_West.html">Outer South West </a></li>
+                    <li><a href="Outer_West_and_Blue_Mountains.html">Outer West and Blue Mountains </a></li>
+                    <li><a href="Parrametta.html">Parrametta</a></li>
+                    
+                </ul>
+            </li>
+         </ul>
+    </div>
+</nav>
+
+
+
+<div class="content-wrap" >
+    <main id="content" class="content" role="main">
+        <h1 class="page-title">Baulkham<small><small>Sydney</small></small></h1>
+        <!-- Main content -->
+        <section class="content">
+          <div class="row">
+            <div class="col-md-8">
+
+              <!-- AREA CHART -->
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                  <a href="form_elements.html">Pie Chart Of Percentage</a>
+                </div>
+                <div class="box-body">
+                  <iframe src="../amcharts_3/samples/sydney_Baulkham_pie3D.html" width="100%" frameborder="no" border="0"  height="400px" align="middle"  scrolling="no">
+                   </iframe>    
+                </div>
+                <!-- /.box-body -->
+              </div>
+              <!-- /.box -->
+
+              <!-- DONUT CHART -->
+              <div class="box box-danger">
+                <div class="box-header with-border">
+                  <a href="form_elements.html">Bar Chart</a>
+                </div>
+                <div class="box-body">
+                     <iframe src="../amcharts_3/samples/sydney_Baulkham_bar3D.html" width="100%" frameborder="no" border="0"  height="400px" align="middle"  scrolling="no">
+                    </iframe>  
+                <!-- /.box-body -->
+               </div>
+              <!-- /.box -->
+              </div>
+
+            </div>           
+            <!-- /.col (LEFT) -->
+
+            <div class="col-md-4">
+              <!-- LINE CHART -->
+              <div class="box box-info">
+                <div class="box-header with-border">
+                  <a href="form_elements.html">Baulkham</a>
+                </div>
+
+                <div class="box-body">
+                  <section class="widget bg-transparent">
+                    <header>
+                        <h4>
+                            Baulkham
+                            <span class="fw-semi-bold">Sydney</span>
+                        </h4>
+                        <div class="widget-controls widget-controls-hover">
+                            <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+                            <a href="#"><i class="fa fa-refresh"></i></a>
+                            <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+                        </div>
+                    </header>
+                    <div class="widget-body">
+                        <p> 966tweets </p>
+                        <p>
+                            <span class="circle bg-warning"><i class="fa fa-map-marker"></i></span>
+                            966 tweets, 7.18% of total tweets
+                        </p>
+                        <div class="row progress-stats">
+                            <div class="col-sm-9">
+                                <h5 class="name">Top one sins</h5>
+                                <p class="description deemphasize">Lust</p>
+                                <div class="progress progress-sm js-progress-animate bg-white">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+                                         data-width="35.03%"
+                                         aria-valuemax="100" style="width: 0;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 text-align-center">
+                                <span class="status rounded rounded-lg bg-body-light">
+                                    <small><span id="percent-1">75</span>%</small>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row progress-stats">
+                            <div class="col-sm-9">
+                                <h5 class="name">Top two sins</h5>
+                                <p class="description deemphasize">wrath</p>
+                                <div class="progress progress-sm js-progress-animate bg-white">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="39"
+                                         data-width="39%"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 0;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 text-align-center">
+                                <span class="status rounded rounded-lg bg-body-light">
+                                    <small><span  id="percent-2">84</span>%</small>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row progress-stats">
+                            <div class="col-sm-9">
+                                <h5 class="name">Top three sins</h5>
+                                <p class="description deemphasize">sloth</p>
+                                <div class="progress progress-sm js-progress-animate bg-white">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80"
+                                         data-width="16.32%"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 0;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 text-align-center">
+                                <span class="status rounded rounded-lg bg-body-light">
+                                    <small><span id="percent-3">16.32</span>%</small>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </section>  
+              </div>
+              <!-- /.box -->
+            </div>
+
+            <!-- BAR CHART -->
+            <div class="box box-success">
+              <div class="box-header with-border">
+                <a href="form_elements.html">Analysis</a>
+              </div>
+                <div class="box-body">
+                  <section class="widget bg-transparent">
+                    <header>
+                        <h4>
+                            Baulkham
+                            <span class="fw-semi-bold">Sydney</span>
+                        </h4>
+                        <div class="widget-controls widget-controls-hover">
+                            <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+                            <a href="#"><i class="fa fa-refresh"></i></a>
+                            <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+                        </div>
+                    </header>
+                    <div class="widget-body">
+                        <p> 966tweets </p>
+                        <p>
+                            <span class="circle bg-warning"><i class="fa fa-map-marker"></i></span>
+                            966 tweets, 7.18% of total tweets
+                        </p>
+                        <div class="row progress-stats">
+                            <div class="col-sm-9">
+                                <h5 class="name">Top one sins</h5>
+                                <p class="description deemphasize">Lust</p>
+                                <div class="progress progress-sm js-progress-animate bg-white">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+                                         data-width="35.03%"
+                                         aria-valuemax="100" style="width: 0;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 text-align-center">
+                                <span class="status rounded rounded-lg bg-body-light">
+                                    <small>324</small>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row progress-stats">
+                            <div class="col-sm-9">
+                                <h5 class="name">Top two sins</h5>
+                                <p class="description deemphasize">wrath</p>
+                                <div class="progress progress-sm js-progress-animate bg-white">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="39"
+                                         data-width="39%"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 0;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 text-align-center">
+                                <span class="status rounded rounded-lg bg-body-light">
+                                    <small>200</small>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row progress-stats">
+                            <div class="col-sm-9">
+                                <h5 class="name">Top three sins</h5>
+                                <p class="description deemphasize">sloth</p>
+                                <div class="progress progress-sm js-progress-animate bg-white">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80"
+                                         data-width="80%"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 0;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 text-align-center">
+                                <span class="status rounded rounded-lg bg-body-light">
+                                    <small>151</small>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </section>  
+              </div>
+              <!-- /.box -->
+        </div>
+        <!-- /.col (RIGHT) -->
+          
+      </div>
+        <!--row-->
+            <!-- /.row -->
+      <div class="row">
+          <div class="col-md-12">
+              <iframe src="map_Baulkham.html" width="100%" frameborder="no" border="0"  height="400px" align="middle"  scrolling="no">
+              </iframe> 
+          </div>
+      </div>
+
+    </section>
+  <!-- /.content -->
+  </main>
+
+</div>
+    <!-- /#wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="../../testplugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="../../testbootstrap/js/bootstrap.min.js"></script>
+<!-- ChartJS 1.0.1 -->
+<script src="../../testplugins/chartjs/Chart.min.js"></script>
+<!-- FastClick -->
+<script src="../../testplugins/fastclick/fastclick.js"></script>
+<!-- page script -->
+
+
+<!-- common libraries. required for every page-->
+<script src="../../vendor/jquery/dist/jquery.min.js"></script>
+<script src="../../vendor/jquery-pjax/jquery.pjax.js"></script>
+<script src="../../vendor/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
+<script src="../../vendor/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+<script src="../../vendor/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+<script src="../../vendor/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
+<script src="../../vendor/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
+<script src="../../vendor/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
+<script src="../../vendor/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="../../vendor/widgster/widgster.js"></script>
+<script src="../../vendor/pace.js/pace.js" data-pace-options='{ "target": ".content-wrap", "ghostTime": 1000 }'></script>
+<script src="../../vendor/jquery-touchswipe/jquery.touchSwipe.js"></script>
+
+<!-- common app js -->
+<script src="../../js/settings.js"></script>
+<script src="../../js/app.js"></script>
+
+
+</body>
+</html>

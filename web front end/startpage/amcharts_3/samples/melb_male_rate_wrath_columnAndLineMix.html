@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>amCharts examples</title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <script src="../amcharts/amcharts.js" type="text/javascript"></script>
+        <script src="../amcharts/serial.js" type="text/javascript"></script>
+
+        <script>
+            var chart;
+            var chartData = [
+                {
+                    "Area": 'Inner',
+                    "Tweets percentage": 17.86,
+                    "male rate": 49.11
+                },
+                {
+                    "Area": 'Inner East',
+                    "Tweets percentage": 21.16,
+                    "male rate": 47.92
+                },
+                {
+                    "Area": 'Inner South',
+                    "Tweets percentage": 14.99,
+                    "male rate": 48.09
+                },
+                {
+                    "Area": 'North East',
+                    "Tweets percentage": 16.05,
+                    "male rate": 49.12
+                },
+                 {
+                    "Area": 'North West',
+                    "Tweets percentage": 17.89,
+                    "male rate": 49.36
+                },
+                {
+                   "Area": 'Outer East',
+                    "Tweets percentage": 22.66,
+                    "male rate": 48.87
+                },
+                {
+                     "Area": 'South East',
+                    "Tweets percentage": 27.61,
+                    "male rate": 49.74
+                },
+                {
+                    "Area": 'West',
+                    "Tweets percentage": 15.26,
+                    "male rate": 49.82,
+                    "dashLengthLine": 5
+                },
+                {
+                    "Area": 'mornington',
+                    "Tweets percentage": 19.75,
+                    "male rate": 48.55,
+                    "dashLengthColumn": 5,
+                    "alpha":0.2,
+                    "additional":"(projection)"
+                }
+            ];
+
+
+            AmCharts.ready(function () {
+                // SERIAL CHART
+                chart = new AmCharts.AmSerialChart();
+
+                chart.dataProvider = chartData;
+                chart.categoryField = "Area";
+                chart.startDuration = 1;
+
+                chart.handDrawn = true;
+                chart.handDrawnScatter = 3;
+
+                // AXES
+                // category
+                var categoryAxis = chart.categoryAxis;
+                categoryAxis.gridPosition = "start";
+
+                // value
+                var valueAxis = new AmCharts.ValueAxis();
+                valueAxis.axisAlpha = 0;
+                chart.addValueAxis(valueAxis);
+
+                // GRAPHS
+                // column graph
+                var graph1 = new AmCharts.AmGraph();
+                graph1.type = "column";
+                graph1.title = "male rate";
+                graph1.lineColor = "#a668d5";
+                graph1.valueField = "male rate";
+                graph1.lineAlpha = 1;
+                graph1.fillAlphas = 1;
+                graph1.dashLengthField = "dashLengthColumn";
+                graph1.alphaField = "alpha";
+                graph1.balloonText = "<span style='font-size:13px;'>[[title]] in [[category]]:<b>[[value]]</b> [[additional]]</span>";
+                chart.addGraph(graph1);
+
+                // line
+                var graph2 = new AmCharts.AmGraph();
+                graph2.type = "line";
+                graph2.title = "Tweets percentage";
+                graph2.lineColor = "#fcd202";
+                graph2.valueField = "Tweets percentage";
+                graph2.lineThickness = 3;
+                graph2.bullet = "round";
+                graph2.bulletBorderThickness = 3;
+                graph2.bulletBorderColor = "#fcd202";
+                graph2.bulletBorderAlpha = 1;
+                graph2.bulletColor = "#ffffff";
+                graph2.dashLengthField = "dashLengthLine";
+                graph2.balloonText = "<span style='font-size:13px;'>[[title]] in [[category]]:<b>[[value]]</b> [[additional]]</span>";
+                chart.addGraph(graph2);
+
+                // LEGEND
+                var legend = new AmCharts.AmLegend();
+                legend.useGraphSettings = true;
+                chart.addLegend(legend);
+
+                // WRITE
+                chart.write("chartdiv");
+            });
+        </script>
+    </head>
+
+    <body>
+        <div id="chartdiv" style="width:100%; height:400px;"></div>
+    </body>
+
+</html>

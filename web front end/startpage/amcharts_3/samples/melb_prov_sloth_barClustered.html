@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>amCharts examples</title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <script src="../amcharts/amcharts.js" type="text/javascript"></script>
+        <script src="../amcharts/serial.js" type="text/javascript"></script>
+        <script>
+            var chart;
+
+            var chartData = [
+                 {
+                    "Area": 'Inner',
+                    "Tweets percentage": 20.19,
+                    "teenager rate": 10.75
+                },
+                {
+                    "Area": 'Inner East',
+                    "Tweets percentage": 26.64,
+                    "teenager rate": 8.18
+                },
+                {
+                    "Area": 'Inner South',
+                    "Tweets percentage": 22.21,
+                    "teenager rate": 6.55
+                },
+                {
+                    "Area": 'North East',
+                    "Tweets percentage": 21.40,
+                    "teenager rate": 7.45
+                },
+                {
+                    "Area": 'North West',
+                    "Tweets percentage": 24.74,
+                    "teenager rate": 6.93
+                },
+                {
+                    "Area": 'Outer East',
+                    "Tweets percentage": 17.24,
+                    "teenager rate": 6.54
+                },
+                {
+                    "Area": 'South East',
+                    "Tweets percentage": 16.04,
+                    "teenager rate": 7.72
+                },
+                {
+                    "Area": 'West',
+                    "Tweets percentage": 12.63,
+                    "teenager rate": 7.30
+                },
+                {
+                    "Area": 'mornington',
+                    "Tweets percentage": 27.16,
+                    "teenager rate": 5.85
+                }
+            ];
+
+
+            AmCharts.ready(function () {
+                // SERIAL CHART
+                chart = new AmCharts.AmSerialChart();
+                chart.dataProvider = chartData;
+                chart.categoryField = "Area";
+                chart.startDuration = 1;
+                chart.plotAreaBorderColor = "#DADADA";
+                chart.plotAreaBorderAlpha = 1;
+                // this single line makes the chart a bar chart
+                chart.rotate = true;
+
+                // AXES
+                // Category
+                var categoryAxis = chart.categoryAxis;
+                categoryAxis.gridPosition = "start";
+                categoryAxis.gridAlpha = 0.1;
+                categoryAxis.axisAlpha = 0;
+
+                // Value
+                var valueAxis = new AmCharts.ValueAxis();
+                valueAxis.axisAlpha = 0;
+                valueAxis.gridAlpha = 0.1;
+                valueAxis.position = "top";
+                chart.addValueAxis(valueAxis);
+
+                // GRAPHS
+                // first graph
+                var graph1 = new AmCharts.AmGraph();
+                graph1.type = "column";
+                graph1.title = "Tweets percentage";
+                graph1.valueField = "Tweets percentage";
+                graph1.balloonText = "Tweets percentage:[[value]]";
+                graph1.lineAlpha = 0;
+                graph1.fillColors = "#ADD981";
+                graph1.fillAlphas = 1;
+                chart.addGraph(graph1);
+
+                // second graph
+                var graph2 = new AmCharts.AmGraph();
+                graph2.type = "column";
+                graph2.title = "teenager rate";
+                graph2.valueField = "teenager rate";
+                graph2.balloonText = "teenager rate:[[value]]";
+                graph2.lineAlpha = 0;
+                graph2.fillColors = "#81acd9";
+                graph2.fillAlphas = 1;
+                chart.addGraph(graph2);
+
+                // LEGEND
+                var legend = new AmCharts.AmLegend();
+                chart.addLegend(legend);
+
+                chart.creditsPosition = "top-right";
+
+                // WRITE
+                chart.write("chartdiv");
+            });
+        </script>
+    </head>
+
+    <body>
+        <div id="chartdiv" style="width:100%; height:400px;"></div>
+    </body>
+
+</html>
